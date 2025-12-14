@@ -19,6 +19,35 @@ graph LR
     D -->|"Semantic Layer"| E["SQL Views"]
     E -->|Visualize| F["Power BI Dashboard"]
 ```
+Decisiones de Diseño 
+Para garantizar escalabilidad y consistencia, se tomaron las siguientes decisiones arquitectónicas:
+
+- Grano: Se eligió el nivel de detalle máximo (1 fila por línea de factura) para permitir análisis profundos de canasta de compra (Market Basket Analysis).
+
+- SCD Tipo 1: Para Dimensiones (Cliente/Producto) se priorizó el estado actual sobre el histórico para simplificar el modelo inicial y optimizar el rendimiento de consulta.
+
+- Estrategia de Staging: Separación estricta entre staging_raw (copia fiel del origen para auditoría) y staging_clean (datos tipados y validados) para desacoplar la extracción de la transformación.
+
+- Carga Incrementa: El ETL no reprocesa todo el historial. Utiliza una marca de agua basada en InvoiceDate para procesar solo registros nuevos.
+
+- Manejo de Devoluciones: Las transacciones con InvoiceNo comenzando en 'C' se segregan lógicamente para analizar "Ventas Brutas" vs "Netas" sin ensuciar los KPIs operativos principales.
+
+Modelo de Datos (Esquema Estrella)
+El Data Warehouse centraliza los hechos en FactSales rodeado de dimensiones conformadas.
+
+erDiagram
+    FactSales {
+        int fact_sales_key PK
+        int date_key FK
+        int product_key FK
+        int customer_key FK
+        decimal line_total
+    }
+    DimDate ||--o{ FactSales : "filtra por"
+    DimProduct ||--o{ FactSales : "describe"
+    DimCustomer ||--o{ FactSales : "compra"
+    DimCountry ||--o{ FactSales : "localiza"
+
 Componentes Clave
 1. Ingesta & Limpieza (Python): Scripts modulares (pandas, sqlalchemy) que normalizan esquemas y aplican reglas de calidad (eliminación de devoluciones, manejo de nulos).
 
