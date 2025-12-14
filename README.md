@@ -11,12 +11,14 @@ Un proyecto de ingeniería de datos completo que implementa un Data Warehouse mo
 
 El flujo de datos sigue una arquitectura ELT/ETL robusta diseñada para ser escalable e incremental.
 
+```mermaid
 graph LR
     A["CSV Source"] -->|Extract| B("Staging Area - Python")
     B -->|"Transform & Clean"| C{"SQL Server Staging"}
     C -->|"Load (SP Incremental)"| D[("Data Warehouse - Star Schema")]
     D -->|"Semantic Layer"| E["SQL Views"]
     E -->|Visualize| F["Power BI Dashboard"]
+```
 Componentes Clave
 Ingesta & Limpieza (Python): Scripts modulares (pandas, sqlalchemy) que normalizan esquemas y aplican reglas de calidad (eliminación de devoluciones, manejo de nulos).
 
