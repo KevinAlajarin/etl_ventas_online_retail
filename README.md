@@ -49,6 +49,7 @@ erDiagram
     DimCustomer ||--o{ FactSales : "compra"
     DimCountry ||--o{ FactSales : "localiza"
 ```
+  <img width="1124" height="738" alt="image" src="https://github.com/user-attachments/assets/295b55b6-6b1c-4d49-822b-5901b1053c38" />
 
 Componentes Clave
 1. Ingesta & Limpieza (Python): Scripts modulares (pandas, sqlalchemy) que normalizan esquemas y aplican reglas de calidad (eliminación de devoluciones, manejo de nulos).
@@ -56,11 +57,6 @@ Componentes Clave
 2. Staging Area (SQL): Tablas intermedias (raw y clean) para desacoplar la extracción de la carga.
 
 3. Data Warehouse (SQL Server):
-
-- Modelo Estrella: Fact Table central (FactSales) rodeada de Dimensiones (DimProduct, DimCustomer, DimDate, DimCountry).
-
-  <img width="1124" height="738" alt="image" src="https://github.com/user-attachments/assets/295b55b6-6b1c-4d49-822b-5901b1053c38" />
-
 
 - Carga Incremental: Stored Procedure inteligente que gestiona Upserts (SCD Tipo 1) y marcas de agua (Watermarks) para cargar solo datos nuevos.
 
