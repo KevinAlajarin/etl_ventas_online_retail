@@ -116,5 +116,4 @@ Geo-Spatial: Mapa de distribución de ventas por país.
 
 <img width="1312" height="744" alt="image" src="https://github.com/user-attachments/assets/5820eb89-07b0-478c-a05b-d31fffba3453" />
 
-
-Autor: Kevin Alajarin
+Desarrollado por Kevin ALajarin - 2025
