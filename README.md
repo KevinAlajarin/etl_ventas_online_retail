@@ -35,6 +35,7 @@ Para garantizar escalabilidad y consistencia, se tomaron las siguientes decision
 Modelo de Datos (Esquema Estrella)
 El Data Warehouse centraliza los hechos en FactSales rodeado de dimensiones conformadas.
 
+```text
 erDiagram
     FactSales {
         int fact_sales_key PK
@@ -47,6 +48,7 @@ erDiagram
     DimProduct ||--o{ FactSales : "describe"
     DimCustomer ||--o{ FactSales : "compra"
     DimCountry ||--o{ FactSales : "localiza"
+```
 
 Componentes Clave
 1. Ingesta & Limpieza (Python): Scripts modulares (pandas, sqlalchemy) que normalizan esquemas y aplican reglas de calidad (eliminación de devoluciones, manejo de nulos).
