@@ -6,6 +6,8 @@
 ![ETL](https://img.shields.io/badge/ETL-Incremental-4B8BBE?style=for-the-badge)
 
 Un proyecto de ingeniería de datos completo que implementa un Data Warehouse moderno para una empresa de Retail. El sistema ingesta datos transaccionales, los normaliza en un modelo **Estrella (Star Schema)** y presenta insights de negocio a través de un dashboard interactivo.
+El kaggle utilizado:
+https://www.kaggle.com/datasets/danielarivasu/online-retail-sales
 
 ## 🏗️ Arquitectura del Sistema
 
