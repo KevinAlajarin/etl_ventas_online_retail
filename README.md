@@ -28,6 +28,9 @@ Componentes Clave
 
 - Modelo Estrella: Fact Table central (FactSales) rodeada de Dimensiones (DimProduct, DimCustomer, DimDate, DimCountry).
 
+  <img width="1124" height="738" alt="image" src="https://github.com/user-attachments/assets/295b55b6-6b1c-4d49-822b-5901b1053c38" />
+
+
 - Carga Incremental: Stored Procedure inteligente que gestiona Upserts (SCD Tipo 1) y marcas de agua (Watermarks) para cargar solo datos nuevos.
 
 4. Analytics: Vistas SQL materializadas para métricas pre-calculadas y Dashboard en Power BI con medidas DAX.
@@ -44,6 +47,7 @@ retail_data_warehouse/
 ```
 
 🚀 Instrucciones de Ejecución
+```text
 Prerrequisitos
 Python 3.9+
 
@@ -100,6 +104,7 @@ Bash
 
 python 02_data_warehouse/python/etl_incremental.py
 Este script orquesta la extracción, limpieza y carga incremental.
+```
 
 📊 Dashboard Overview
 El reporte incluye:
@@ -108,5 +113,8 @@ KPIs Ejecutivos: Revenue, AOV, Total Orders.
 Análisis Temporal: Tendencias de venta mensual/anual.
 Top Products: Ranking de productos por ingresos (Pareto).
 Geo-Spatial: Mapa de distribución de ventas por país.
+
+<img width="1312" height="744" alt="image" src="https://github.com/user-attachments/assets/5820eb89-07b0-478c-a05b-d31fffba3453" />
+
 
 Autor: Kevin Alajarin
