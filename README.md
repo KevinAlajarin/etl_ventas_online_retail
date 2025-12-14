@@ -51,6 +51,24 @@ erDiagram
 ```
   <img width="1124" height="738" alt="image" src="https://github.com/user-attachments/assets/295b55b6-6b1c-4d49-822b-5901b1053c38" />
 
+Reglas de Calidad de Datos
+El pipeline de Python (clean_staging.py) aplica filtros estrictos antes de la carga:
+
+- Integridad de Precios: UnitPrice > 0 (Se eliminan errores de sistema o regalos no contables).
+
+- Manejo de Nulos: CustomerID nulo se mapea a -1 (Unknown) para mantener integridad referencial en el modelo estrella.
+
+- Consistencia: Se eliminan duplicados exactos a nivel de línea.
+
+- Normalización: Descripciones vacías se imputan como "No Description".
+
+Control y Monitoreo del ETL:
+- El sistema mantiene un estado de ejecución en la tabla etl.control_table.
+
+- Last Processed Date: Se almacena la fecha máxima de la última carga exitosa.
+
+- Idempotencia: El Stored Procedure utiliza lógica MERGE y verificaciones de existencia para permitir re-ejecuciones seguras sin duplicar datos.
+
 Componentes Clave
 1. Ingesta & Limpieza (Python): Scripts modulares (pandas, sqlalchemy) que normalizan esquemas y aplican reglas de calidad (eliminación de devoluciones, manejo de nulos).
 
@@ -142,5 +160,14 @@ Top Products: Ranking de productos por ingresos (Pareto).
 Geo-Spatial: Mapa de distribución de ventas por país.
 
 <img width="1312" height="744" alt="image" src="https://github.com/user-attachments/assets/5820eb89-07b0-478c-a05b-d31fffba3453" />
+
+Futuras mejoras
+- Implementar SCD Tipo 2 en DimCustomer para trackear cambios históricos de ubicación.
+
+- Orquestar el pipeline con Apache Airflow o Prefect.
+
+- Contenerizar la base de datos con Docker.
+
+- Agregar pruebas unitarias con pytest para las transformaciones de Pandas.
 
 Desarrollado por Kevin ALajarin - 2025
