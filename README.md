@@ -32,9 +32,6 @@ Carga Incremental: Stored Procedure inteligente que gestiona Upserts (SCD Tipo 1
 
 Analytics: Vistas SQL materializadas para métricas pre-calculadas y Dashboard en Power BI con medidas DAX.
 
-📂 Estructura del Proyecto
-Plaintext
-
 retail_data_warehouse/
 ├── 00_documentacion/      # Diagramas ERD, reglas de negocio y decisiones de diseño
 ├── 01_staging_area/       # Scripts Python para Ingesta y SQL para tablas temporales
