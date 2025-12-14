@@ -9,7 +9,7 @@ Un proyecto de ingeniería de datos completo que implementa un Data Warehouse mo
 El kaggle utilizado:
 https://www.kaggle.com/datasets/danielarivasu/online-retail-sales
 
-## 🏗️ Arquitectura del Sistema
+Arquitectura del Sistema
 
 El flujo de datos sigue una arquitectura ELT/ETL robusta diseñada para ser escalable e incremental.
 
@@ -93,7 +93,7 @@ retail_data_warehouse/
 └── requirements.txt       # Dependencias
 ```
 
-🚀 Instrucciones de Ejecución
+Instrucciones de Ejecución
 ```text
 Prerrequisitos
 Python 3.9+
@@ -153,7 +153,7 @@ python 02_data_warehouse/python/etl_incremental.py
 Este script orquesta la extracción, limpieza y carga incremental.
 ```
 
-📊 Dashboard Overview
+Dashboard Overview
 El reporte incluye:
 
 KPIs Ejecutivos: Revenue, AOV, Total Orders.
