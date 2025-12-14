@@ -1,0 +1,34 @@
+# --- Seguridad (CRÍTICO) ---
+.env
+.env.local
+secrets.py
+
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+env/
+.pytest_cache/
+
+# --- Datos (No subir archivos grandes) ---
+*.csv
+*.xlsx
+*.json
+01_staging_area/raw/*.csv
+01_staging_area/raw/*.zip
+
+# --- IDEs y Sistema ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- Power BI ---
+# Opcional: Si el PBIX es gigante (>100MB), descomenta la siguiente línea
+# *.pbix
+# (Como es portafolio, te recomiendo SÍ subir el .pbix si pesa menos de 100MB)
+
+# --- Logs ---
+*.log
