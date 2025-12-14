@@ -1,4 +1,4 @@
-# 🛒 Retail Sales Data Warehouse (End-to-End)
+# Data Warehouse De Ventas Retail
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![SQL Server](https://img.shields.io/badge/SQL%20Server-2019%2B-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white)
