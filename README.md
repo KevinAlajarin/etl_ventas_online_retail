@@ -156,10 +156,10 @@ Este script orquesta la extracción, limpieza y carga incremental.
 Dashboard Overview
 El reporte incluye:
 
-KPIs Ejecutivos: Revenue, AOV, Total Orders.
-Análisis Temporal: Tendencias de venta mensual/anual.
-Top Products: Ranking de productos por ingresos (Pareto).
-Geo-Spatial: Mapa de distribución de ventas por país.
+KPIs Ejecutivos: Revenue, AOV, Total Orders.     
+Análisis Temporal: Tendencias de venta mensual/anual.        
+Top Products: Ranking de productos por ingresos (Pareto).            
+Geo-Spatial: Mapa de distribución de ventas por país.       
 
 <img width="1312" height="744" alt="image" src="https://github.com/user-attachments/assets/5820eb89-07b0-478c-a05b-d31fffba3453" />
 
