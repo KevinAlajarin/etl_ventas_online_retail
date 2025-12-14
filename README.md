@@ -170,4 +170,4 @@ Futuras mejoras
 
 - Agregar pruebas unitarias con pytest para las transformaciones de Pandas.
 
-Desarrollado por Kevin ALajarin - 2025
+Desarrollado por Kevin Alajarin - 2025
