@@ -20,18 +20,19 @@ graph LR
     E -->|Visualize| F["Power BI Dashboard"]
 ```
 Componentes Clave
-Ingesta & Limpieza (Python): Scripts modulares (pandas, sqlalchemy) que normalizan esquemas y aplican reglas de calidad (eliminación de devoluciones, manejo de nulos).
+1. Ingesta & Limpieza (Python): Scripts modulares (pandas, sqlalchemy) que normalizan esquemas y aplican reglas de calidad (eliminación de devoluciones, manejo de nulos).
 
-Staging Area (SQL): Tablas intermedias (raw y clean) para desacoplar la extracción de la carga.
+2. Staging Area (SQL): Tablas intermedias (raw y clean) para desacoplar la extracción de la carga.
 
-Data Warehouse (SQL Server):
+3. Data Warehouse (SQL Server):
 
-Modelo Estrella: Fact Table central (FactSales) rodeada de Dimensiones (DimProduct, DimCustomer, DimDate, DimCountry).
+- Modelo Estrella: Fact Table central (FactSales) rodeada de Dimensiones (DimProduct, DimCustomer, DimDate, DimCountry).
 
-Carga Incremental: Stored Procedure inteligente que gestiona Upserts (SCD Tipo 1) y marcas de agua (Watermarks) para cargar solo datos nuevos.
+- Carga Incremental: Stored Procedure inteligente que gestiona Upserts (SCD Tipo 1) y marcas de agua (Watermarks) para cargar solo datos nuevos.
 
-Analytics: Vistas SQL materializadas para métricas pre-calculadas y Dashboard en Power BI con medidas DAX.
+4. Analytics: Vistas SQL materializadas para métricas pre-calculadas y Dashboard en Power BI con medidas DAX.
 
+```text
 retail_data_warehouse/
 ├── 00_documentacion/      # Diagramas ERD, reglas de negocio y decisiones de diseño
 ├── 01_staging_area/       # Scripts Python para Ingesta y SQL para tablas temporales
@@ -40,6 +41,7 @@ retail_data_warehouse/
 ├── 04_bi_powerbi/         # Archivo .pbix y guías de visualización
 ├── 05_utilities/          # Herramientas (Generador de DimDate, Reset)
 └── requirements.txt       # Dependencias
+```
 
 🚀 Instrucciones de Ejecución
 Prerrequisitos
