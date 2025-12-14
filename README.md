@@ -42,7 +42,6 @@ retail_data_warehouse/
 ├── 04_bi_powerbi/         # Archivo .pbix y guías de visualización
 ├── 05_utilities/          # Herramientas (Generador de DimDate, Reset)
 └── requirements.txt       # Dependencias
-```
 
 🚀 Instrucciones de Ejecución
 Prerrequisitos
